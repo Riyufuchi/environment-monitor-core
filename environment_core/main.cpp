@@ -1,6 +1,9 @@
+extern "C"
+{
 #include "src/sos/sos.h"
+}
 
-int main(void)
+int main()
 {
   sos_init();
   while (1)

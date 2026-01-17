@@ -1,18 +1,16 @@
-%!TeX root =  ../../ArduinoInC.tex
+%!TeX root =  ../../environment_monitor_core.tex
 
 \section{IDE}
 Any C/C++ IDE or text editor can be used for firmware development, since the essential requirement is the toolchain capable of compiling and flashing the firmware to the target microcontroller.  
 In the case of Arduino boards, a programmer is integrated into the board itself, which eliminates the need for external programming hardware. This simplifies the workflow to code, compile, and upload directly over USB.
 
 \section{C and C++ Support}
-The primary language used in this project is \textbf{C}.  
-Although \textbf{C++} can also be used, but the standard \textbf{C++} library is only partially supported due to hardware and memory limitations of IoT devices.  
-For this reason, low-level and efficient \textbf{C} code is recommended to ensure portability and optimal performance on resource-constrained microcontrollers.
+The primary language used in this project is \textbf{C++}.  
 
 \section{Uploading the code to the board}
 
 \subsection{Compilation}
-A ready-to-use \texttt{Makefile} is provided in the project repository to simplify the build process.  
+A ready-to-use \texttt{CMake} is provided in the project repository to simplify the build process.  
 Before using it, minor configuration may be required depending on:
 \begin{itemize}
     \item The type of Arduino board in use (e.g., \texttt{atmega328p} for Arduino Uno).
@@ -22,16 +20,16 @@ Before using it, minor configuration may be required depending on:
 \subsection{Flashing the chip}
 Once configured, the firmware can be compiled and uploaded with a few simple commands.  
 
-\begin{lstlisting}[language=bash, caption={Using the Makefile to compile and upload firmware}, label={lst:arduino-makefile}]
-make # Compile the source code into a firmware image
-
-make flash # Flash the compiled firmware onto the board
+\begin{lstlisting}[language=bash, caption={Using the CMake to compile and upload firmware}, label={lst:arduino-cmake}]
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=cmake/avr-toolchain.cmake
+cmake --build build # Compile the source code into a firmware image
+cmake --build build --target flash # Flash the compiled firmware onto the board
 \end{lstlisting}
 
 This process will:
 \begin{enumerate}
     \item Invoke the AVR-GCC toolchain to compile the source files into machine code.
-    \item Use \texttt{avrdude} (configured in the Makefile) to upload the generated binary to the Arduino board via the USB programmer.
+    \item Use \texttt{avrdude} (configured in the CMake) to upload the generated binary to the Arduino board via the USB programmer.
 \end{enumerate}
 
 
