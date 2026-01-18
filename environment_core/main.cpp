@@ -3,6 +3,8 @@ extern "C"
 #include "src/sos/sos.h"
 }
 
+#include "src/output_modules/traffic_light.h"
+
 int main()
 {
   sos_init();

@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.20)
 
 project(environment_monitor_core LANGUAGES C CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_compile_definitions(
+    __AVR__
+    __AVR_ATmega328P__
+)
+
+
+include_directories(/usr/lib/avr/include)
+
 set(MCU atmega328p)
 set(F_CPU 16000000UL)
 
