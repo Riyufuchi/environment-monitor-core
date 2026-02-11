@@ -39,7 +39,7 @@ include_directories(/usr/lib/avr/include)
 set(MCU atmega328p)
 set(F_CPU 16000000UL)
 
-set(SRC_DIR environment_core)
+set(SRC_DIR environment_core_src)
 set(BUILD_DIR ${CMAKE_BINARY_DIR})
 
 file(GLOB_RECURSE C_SOURCES
