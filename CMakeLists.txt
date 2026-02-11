@@ -4,6 +4,30 @@ project(environment_monitor_core LANGUAGES C CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+#
+
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR avr)
+
+set(AVR_MCU atmega328p)
+set(F_CPU 16000000UL)
+
+set(CMAKE_C_COMPILER avr-gcc)
+set(CMAKE_CXX_COMPILER avr-g++)
+set(CMAKE_ASM_COMPILER avr-g++)
+
+set(CMAKE_OBJCOPY avr-objcopy)
+set(CMAKE_SIZE avr-size)
+
+set(CMAKE_C_FLAGS "-mmcu=${AVR_MCU} -DF_CPU=${F_CPU} -Os")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-sized-deallocation")
+
+set(CMAKE_EXE_LINKER_FLAGS "-mmcu=${AVR_MCU} -fno-sized-deallocation")
+
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
+#
+
 add_compile_definitions(
     __AVR__
     __AVR_ATmega328P__
@@ -31,7 +55,9 @@ add_executable(firmware
     ${CPP_SOURCES}
 )
 
-target_compile_features(firmware PRIVATE cxx_std_17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+target_compile_features(firmware PRIVATE cxx_std_20)
 
 target_compile_options(firmware PRIVATE
     -Wall

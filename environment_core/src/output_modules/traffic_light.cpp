@@ -1,7 +1,7 @@
 //==============================================================================
 // Author     : riyufuchi
 // Created on : 2026-01-18
-// Last edit  : 2026-01-18
+// Last edit  : 2026-02-10
 // Copyright  : Copyright (c) 2026, riyufuchi
 //==============================================================================
 #include "traffic_light.h"
@@ -22,10 +22,10 @@ TrafficLight::TrafficLight(uint8_t pin_red, uint8_t pin_yellow, uint8_t pin_gree
 	PORTD &= ~(1 << this->pins[2]);
 }
 
-void TrafficLight::turn_light(TRAFFIC_LIGHT light, bool on)
+void TrafficLight::turn_light(TrafficColor color, bool on)
 {
 	if (on)
-		PORTD |= (1 << pins[static_cast<uint8_t>(light)]);
+		PORTD |= (1 << pins[static_cast<uint8_t>(color)]);
 	else
-		PORTD &= ~(1 << pins[static_cast<uint8_t>(light)]);
+		PORTD &= ~(1 << pins[static_cast<uint8_t>(color)]);
 }

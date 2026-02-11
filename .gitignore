@@ -49,6 +49,7 @@ x64
 *.vcxproj.user
 *.aps
 *.rc
+.cache
 
 # Prerequisites
 *.d
