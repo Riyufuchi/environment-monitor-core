@@ -7,8 +7,7 @@
 #ifndef TRAFFIC_LIGHT_H
 #define TRAFFIC_LIGHT_H
 
-#include <avr/io.h>     // AVR registers: DDRx, PORTx, PINx
-#include <util/delay.h> // _delay_ms()
+#include "../board/base_board.hpp"
 
 enum class TrafficColor
 {
@@ -20,9 +19,10 @@ enum class TrafficColor
 class TrafficLight
 {
 private:
+    Board& board_pin_map;
 	uint8_t pins[3];
 public:
-	TrafficLight(uint8_t pin_red, uint8_t pin_yellow, uint8_t pin_green);
+	TrafficLight(Board& board_pin_map, uint8_t pin_red, uint8_t pin_yellow, uint8_t pin_green);
 	void turn_light(TrafficColor color, bool on);
 };
 
