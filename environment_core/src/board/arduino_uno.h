@@ -6,7 +6,7 @@ class ArduinoUno final : public Board
 {
 public:
     static const PinDefinition pin_map[14];
-    virtual void pin_mode(uint8_t pin, bool output) override;
+    virtual void pin_mode(uint8_t pin, PinMode pin_mode) override;
     virtual void digital_write(uint8_t pin, bool high) override;
     virtual bool digital_read(uint8_t pin) override;
 };

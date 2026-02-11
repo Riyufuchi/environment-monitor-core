@@ -1,7 +1,6 @@
 #include "arduino_uno.h"
 #include <avr/io.h>
 
-
 const ArduinoUno::PinDefinition ArduinoUno::pin_map[14] = {
     {&DDRD, &PORTD, &PIND, 0 },
     {&DDRD, &PORTD, &PIND, 1 },
@@ -19,13 +18,24 @@ const ArduinoUno::PinDefinition ArduinoUno::pin_map[14] = {
     {&DDRB, &PORTB, &PINB, 5 }
 };
 
-void ArduinoUno::pin_mode(uint8_t pin, bool output)
+void ArduinoUno::pin_mode(uint8_t pin, PinMode pin_mode)
 {
     auto& p = pin_map[pin];
-    if (output)
-        *p.ddr |= (1 << p.bit);
-    else
-        *p.ddr &= ~(1 << p.bit);
+    
+    switch (pin_mode)
+    {
+        case PinMode::OUTPUT:
+            *p.ddr |= (1 << p.bit);
+        break;
+        case PinMode::INPUT:
+            *p.ddr &= ~(1 << p.bit);
+            *p.port &= ~(1 << p.bit); // Without pull-up
+        break;
+        case PinMode::INPUT_PULLUP:
+            *p.ddr &= ~(1 << p.bit);
+            *p.port |= (1 << p.bit); // With pull-up
+        break;
+    }
 }
 
 void ArduinoUno::digital_write(uint8_t pin, bool high)
