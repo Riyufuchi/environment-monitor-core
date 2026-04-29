@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>SufuSoft - Login</title>
+	<base href="../../" />
+	
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	  <link rel="icon" href="pictures/logos/logo.png">
+	<link href="sivo/css/base/sivoBase.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/base/sivoCustom.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/header/mobileMenu.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/basicForm.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/loginForm.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/components.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/sivoForm.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/visualEffects/effects.css" rel="stylesheet" type="text/css">
+
+	<script src="sivo/js/mobileMenu.js"></script> <!-- Mobile menu js -->
+	<script src="sivo/js/menuBar.js"></script>
+	<script>
+		window.onload=function()
+		{
+			createMenu();
+			centerMain();
+			
+		}
+		window.onorientationchange = function()
+		{
+			centerMain();
+		}
+	</script>
+</head>
+<body style="background-image: url('pictures/backgrounds/ComputerWall.png');" class="">
+	<header class="sivoHeader" id="navbar">
+		<div class="sivoHeaderContainer">
+			<a href="index.html" class="sivoHeaderLogo"><img class="sivoHeaderLogo" src="pictures/logos/logo.png" alt="company logo"></a>
+			<a href="javascript:void(0);" class="sivoHeaderMenuButton" onclick="mobileMenu()">≡</a>
+		</div>
+	</header>
+	<nav class="sivoHeaderMenuContainer" id="sivoLinks"></nav>
+	<main class="centerForm">
+		<section class="loginWindow">
+			<form class="loginForm sivoForm" action="sivo/php/login.php" method="POST">
+				<h2>Login</h2>
+				<table>
+					<tr>
+						<td><label for="username">Username:</label></td>
+						<td><input type="text" id="username" name="username" placeholder="Username" required></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password:</label></td>
+						<td><input type="password" id="password" name="password" placeholder="Password" required></td>
+					</tr>
+				</table>
+				<input type="submit" value="Login" class="okButton sivoButton">
+			</form>
+		</section>
+	</main>
+	<footer style="position: absolute; bottom: 0px;" id="footer">
+	</footer>
+</body>
+</html>

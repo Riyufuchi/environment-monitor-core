@@ -1,0 +1,23 @@
+/* CSS Document */
+.dropdown
+{
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content
+{
+	display: none;
+	position: relative;
+	background-color: white;
+	color: black;
+	width: 100%;
+	padding: 8px 8px;
+	font-size: 24px;
+	z-index: 0;
+}
+
+.dropdown:hover .dropdown-content
+{
+	display: block;
+}

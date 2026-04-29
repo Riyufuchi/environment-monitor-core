@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* Legacy
+.jobButton {
+  background-color: red;
+  width: 100%;
+  padding-top: 100%;  1:1 Aspect Ratio 
+  position: relative;  If you want text inside of it 
+}
+If you want text inside of the container 
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+*/
+.webapp
+{
+	background-image: url('../../../pictures/icons/app.svg');
+	width: 50%;
+	padding-top: 50%;
+	background-size: cover;
+}
+.app
+{
+	background-image: url('../../../pictures/icons/webapp.png');
+	width: 50%;
+	padding-top: 50%;
+	background-size: cover;
+}
+.other
+{
+	background-image: url('../../../pictures/icons/other.svg');
+	width: 50%;
+	padding-top: 50%;
+	background-size: cover;
+}
+.jobButton
+{
+	max-width: 20%;
+	min-width: 20%;
+	aspect-ratio : 1 / 1;
+	background-color: var(--body-backgroud-color);
+	position: relative;
+	font-size: calc(var(--standard-text-font-size) * 6);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	flex-direction: column;
+	vertical-align: middle;
+	margin: 30px;
+}
+.jobButtonText
+{
+	font-size: calc(var(--standard-text-font-size) * 1.5);
+	position: relative;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #eaeaea;
+}
+.jobButton:hover
+{
+	background-color: var(--job-button-background-color);
+	position: relative;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container
+{
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	text-align: center;
+    align-items: center;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+@media only screen and (orientation: portrait)
+{
+.jobButtonText
+{
+	font-size: var(--standard-text-font-size);
+}
+.jobButton
+{
+	max-width: 40%;
+	min-width: 40%;
+    margin: 16px;
+}
+.container
+{
+   flex-wrap: wrap;
+}
+}

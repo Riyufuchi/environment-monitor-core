@@ -1,0 +1,26 @@
+/* CSS Document */
+.specialSectionHolder
+{
+	width: 80%;
+	padding-top: 14px;
+	padding-bottom: 12px;
+	display: inline-block;
+}
+.specialSection
+{
+	background-color: var(--special-section-background-color);
+	color: var(--special-section-color);
+	width: 100%;
+	height: auto;
+}
+@media only screen and (orientation: portrait)
+{
+	.specialSectionHolder
+	{
+		width: 95%;
+	}
+	.specialSection
+	{
+		width: 100% !important;
+	}
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='cs'>
+<head>
+	<title>Gallery</title>
+	<base href="../../" />
+	
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" href="pictures/logos/logo.png">
+	<link href="sivo/css/base/sivoBase.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/base/sivoCustom.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/header/mobileMenu.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/verticalGallery.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/jobMenu.css" rel="stylesheet" type="text/css">
+
+	<script src="sivo/js/verticalGallery.js"></script>
+	<script src="sivo/js/mobileMenu.js"></script> <!-- Mobile menu js -->
+	<script src="sivo/js/menuBar.js"></script>
+	<script>
+		window.onload=function()
+		{
+			createMenu();
+			createSpacer();
+			loadPictures();
+		}
+		window.onorientationchange = function()
+		{
+			createSpacer();
+		}
+	</script>
+</head>
+<body style="background-image: url('pictures/backgrounds/ComputerWall.png');">
+	<header class="sivoHeader" id="navbar">
+		<div class="sivoHeaderContainer">
+			<a href="index.html" class="sivoHeaderLogo"><img class="sivoHeaderLogo" src="pictures/logos/logo.png" alt="company logo"></a>
+			<a href="javascript:void(0);" class="sivoHeaderMenuButton" onclick="mobileMenu()">≡</a>
+		</div>
+	</header>
+	<nav class="sivoHeaderMenuContainer" id="sivoLinks"></nav>
+	<main>
+		<section>
+			<img id="1" class="galleryFrame" alt="picture1">
+		</section>
+		<section>
+			<button id="back" type="button" class="button45" onclick="loadPrev()"><b>← Back</b></button>
+			<button id="next" type="button" class="button45" onclick="loadNext()"><b>Next →</b></button>
+		</section>
+	</main>
+	<footer id="footer">
+	</footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.sivoForm
+{
+	color: var(--form-color);
+	border: var(--form-border);
+	background-color: var(--form-background-color);
+	border-radius: 15px 15px 15px 15px;
+}

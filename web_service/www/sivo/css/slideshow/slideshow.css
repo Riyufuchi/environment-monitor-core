@@ -1,0 +1,17 @@
+.slide
+{
+	width: 60%;
+	height: auto;
+	display: inline-block;
+}
+.slideButton
+{
+	opacity: 80%;
+	width: 15%;
+	min-height: 100px;
+	max-height: 1000px;
+	margin: auto;
+	display: inline-block;
+	background-color: lightblue;
+	color: black;
+}

@@ -1,0 +1,57 @@
+/* CSS Document */
+/* This style sheet seems to be no longer used in project only in other.html that is no longer offical part of this webpage  */
+.dropMenu
+{
+	/*overflow: hidden;*/
+	background-color: #63452c;
+}
+.dropMenu .dropButton
+{
+	width: 135px;
+	height: 100%;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 12px 16px;
+	background-color: inherit;
+	font-style: bold;
+	text-align: center;
+	font-style: 27px;
+	font-family: Arial;
+	-ms-transform: translateY(35%);
+	transform: translateY(35%);
+	margin: 0px;
+}
+.dropMenu:hover .dropButton
+{
+	background-color: #00ffd5;
+	color: gray;
+}
+.dropMenu-items
+{
+	display: none;
+	float: right;
+	position: absolute;
+	background-color: #00ffd5;
+	width: 135px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropMenu-items a
+{
+	float: none;
+	color: gray;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.dropMenu-items a:hover
+{
+	background-color: hotpink;
+}
+.dropMenu:hover .dropMenu-items
+{
+	display: block;
+}

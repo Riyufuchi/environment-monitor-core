@@ -1,0 +1,17 @@
+/* CSS Document */
+.menuButtonsStyle
+{
+	width: auto;
+	height: 50%;
+	padding: 0px 5px 0px 5px;
+	margin: 0;
+	/*position: relative;*/
+	/*top: 50%;*/
+	-ms-transform: translateY(50%);
+	transform: translateY(50%);
+}
+.logoMenuBar
+{
+	opacity: 100%;
+	background-color: Magenta;
+}

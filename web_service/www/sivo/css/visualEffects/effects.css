@@ -1,0 +1,19 @@
+/* CSS Document */
+
+.blur2x
+{
+	backdrop-filter: blur(2px);
+}
+.blur5x
+{
+	backdrop-filter: blur(5px);
+	/*-webkit-backdrop-filter: blur(5px);*/
+}
+.roundBorder25x
+{
+	border-radius: 25px 25px 25px 25px;
+}
+
+/*@media only screen and (orientation: portrait)
+{
+}*/

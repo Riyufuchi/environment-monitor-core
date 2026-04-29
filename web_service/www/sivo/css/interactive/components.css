@@ -1,0 +1,63 @@
+@charset "UTF-8";
+input[type=password], input[type=text], select, textarea 
+{
+	width: 100%;
+	padding: 12px 20px;
+	/*margin: 8px;
+	margin-left: 10px;*/
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.okButton
+{
+	width: auto;
+	font-size: var(--standard-text-font-size);
+	text-align: center;
+}
+label
+{
+	width: 100%;
+	font-size: var(--standard-text-font-size);
+	font-weight: bold;
+}
+select
+{
+	width: 100%;
+	font-size: 18px;
+}
+.textareaCustom
+{
+	width: calc(100% - 6px);
+	font-size: 18px;
+	margin-right: 16px;
+}
+.textfieldCustom
+{
+	width: calc(100% - 6px);
+	font-size: 18px;
+}
+.sivoButton
+{
+	background-color: var(--body-backgroud-color);
+	color: white; /*var(--body-backgroud-color);*/
+	border-radius: 15px 15px 15px 15px;
+	border: 3px solid white;
+}
+.sivoButton:hover
+{
+	border: 3px solid var(--a-hover-color);
+	color: var(--a-hover-color);
+}
+.sendButton
+{
+	-webkit-appearance: none;
+	appearance: none;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 110px;
+	margin-left: calc(100% - 110px);
+	font-size: var(--standard-text-font-size);
+	text-align: center;
+}

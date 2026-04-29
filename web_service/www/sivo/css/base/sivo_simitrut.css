@@ -1,0 +1,48 @@
+/* Styles for custom element behavior, created for Simitrut website
+
+@author Riyufuchi, Vojta Š.
+@version 13.10.2023
+@since 2022
+*/
+.fotoPul
+{
+	min-width: 30%;
+	max-width: 33%;
+	height: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.listHeader
+{
+	margin-top: 0px;
+	font-size: 76px;
+}
+.fotoSeznam
+{
+	width: 50%;
+	max-height: 100%;
+	float: left;
+	margin-top: 2%;
+	margin-left: 8%; 
+}
+
+@media only screen and (orientation: portrait)
+{
+	.fotoPul
+	{
+		/*max-width: 98%;
+		height: auto;*/
+		display: none;
+	}
+	.listHeader
+	{
+		font-size: 51px;
+	}
+	.fotoSeznam
+	{
+		width: 90%;
+		margin-left: 5%;
+		float: none;
+		margin: auto;
+	}
+}

@@ -1,0 +1,143 @@
+/* Copyright © 2022-2025 by Riyufuchi (code) and Vojta Š. (design) */
+/* Decorative lines created for Simitrut website */
+/* Version: 26.12.2025 */
+/* Released under the proprietary license */
+/*Upper part*/
+.simitrut-leftLine /*Small part of line*/
+{
+	position: relative;
+	width: calc(8% - 4px);
+	float:left;
+	margin-top: 90px;
+	border-top: 4px solid var(--line-color);
+}
+.simitrut-mainArticle
+{
+	text-align: right;
+	width: 92%;
+	min-height: 250px;
+	max-height: 1000px;
+	float:right;
+	margin: auto;
+	/*margin-bottom: 8px;*/
+	border-left: 4px solid var(--line-color);
+	padding: 0px;
+	color: #eaeaea;
+}
+.simitrut-mainArticle p
+{
+	color: #eaeaea;
+    text-align: left;
+    padding-left: 5%;
+}
+.simitrut-title
+{
+	font-size: var(--simitrut-title-font-size);
+	font-weight: normal;
+	margin-top: 90px;
+	/*padding-right:164px;*/
+	padding-top: 108px;
+	border-top: 4px solid var(--line-color);
+}
+/*Lower part*/
+.simitrut-rightHorizontalLine
+{
+	position: relative;
+	width: 92%;
+	float:left;
+	height: 64px;
+	border-top: 4px solid var(--line-color);
+}
+.simitrut-rightVerticalLine
+{
+	position: relative;
+	width: calc(8% - 4px);
+	height: 64px;
+	float:right;
+	margin-bottom: 8px;
+	border-left: 4px solid var(--line-color);
+	border-top: 4px solid var(--line-color);
+}
+.simitrut-contactArticle
+{
+	text-align: left;
+	width: 92%;
+	float:left;
+	margin: auto;
+	margin-top: 8px;
+	border-right: 4px solid var(--line-color);
+	/*border-bottom: 4px solid white;*/
+	padding: 0px;
+}
+.simitrut-contactTitle
+{
+	font-size: 76px;
+	float: right;
+	margin-top: 90px;
+	padding-right:32px;
+	padding-top: 108px;
+	color: #eaeaea;
+}
+.simitrut-paragraph
+{
+	margin-top: 56px;
+	margin-bottom: 56px;
+	/*padding-right:164px;*/
+	font-size: 28px;
+}
+@media only screen and (orientation: portrait)
+{
+	/*Functional stuff*/
+	.simitrut-mainArticle
+	{
+		width: 100%;
+		border-left: 0px;
+		text-align: left;
+		border-bottom: 4px solid var(--line-color);
+	}
+	.simitrut-title
+	{
+		font-size: 32px;
+		padding-top: 24px;
+		padding-right: 8px;
+		margin-top: 0px;
+		margin-bottom: 14px;
+	}
+	.simitrut-paragraph
+	{
+		font-size: 16px;
+		padding-right: 8px;
+		margin-bottom: 28px;
+	}
+	.simitrut-contactTitle
+	{
+		font-size: 32px;
+		float: left;
+		margin-top: 0px;
+		padding-top: 20px;
+		margin-bottom: 14px;
+		
+	}
+	.simitrut-contactArticle
+	{
+		text-align: left;
+		width: 100%;
+		border-right: 0px solid var(--line-color);
+		border-top: 4px solid var(--line-color);
+	}
+	/*Design stuff*/
+	.simitrut-leftLine
+	{
+		visibility: hidden;
+		margin-top: 4px;
+	}
+	.simitrut-rightVerticalLine
+	{
+		/*visibility: hidden;*/
+		height: 0px;
+	}
+	.simitrut-rightHorizontalLine
+	{
+		height: 16px;
+	}
+}

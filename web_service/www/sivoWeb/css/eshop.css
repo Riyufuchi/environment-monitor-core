@@ -1,0 +1,23 @@
+/* CSS Document */
+.itemCard
+{
+	/*
+	width: 20%;
+	height: auto;
+	*/
+	min-width: 380px;
+	max-width: 20%;
+	min-height: 640px;
+	max-height: 50%;
+	background-color: green;
+	border-radius: 25px 25px 25px 25px;
+	text-align: center;
+	float: center;
+	position: relative;
+	display: inline-grid;
+}
+
+.itemCard:hover
+{
+	background-color: pink;
+}

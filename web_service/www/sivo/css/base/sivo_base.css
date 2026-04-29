@@ -1,0 +1,228 @@
+/* CSS Document */
+@font-face
+{
+	font-family: tf2-Secondary;
+	src: url('../../fonts/TF2secondary.ttf');
+}
+@counter-style arrows {
+  system: cyclic;
+  symbols: "➡️";
+  suffix: " ";
+}
+
+:root
+{
+	/*General*/
+	--body-backgroud-color: #3d3d5c;
+	--a-hover-color: #cc80ff;
+	--a-color: hotpink;
+	--a-active-color: gray;
+	--general-color: #00ccaa;
+	--footer-color: #00ccaa;
+	--footer-backgroud-color: #3d3d5c;
+	/*Tables*/
+	--table-header-color: orange;
+	/*Decorations*/
+	--line-color: #3d3d5c;
+	--special-section-background-color: #3d3d5c;
+	--special-section-color: inherit;
+	/*Menus*/
+	--mobile-menu-backgroud-color: #3d3d5c;
+	--mobile-menu-button-color: black;
+	--mobile-menu-button-hover-color: #cc80ff;
+	/*Interactive*/
+	--job-button-background-color: #cc80ff;
+	/*Forms*/
+	--form-color: white;
+	--form-background-color: rgba(211, 211, 197, 0.6);
+	--form-border: 3px solid white;
+	/*
+    Font sizes
+    */
+	--simitrut-title-font-size: 76px;
+	--standard-text-font-size: 24px;
+	--h1-size: calc(var(--standard-text-font-size) * 2.5);
+	--h2-size: calc(var(--standard-text-font-size) * 2);
+	--h3-size: calc(var(--standard-text-font-size) * 1.5);
+	--h4-6-size: calc(var(--standard-text-font-size) * 1.25);
+	/*Mobile font sizes**/
+	--mobile-text-font-size: 16px;
+	--simitrut-title-font-size-mobile: 57px;
+	--h1-size-mobile: calc(var(--standard-text-font-size) * 1.5);
+	--h2-size-mobile: calc(var(--standard-text-font-size) * 1.35);
+	--h3-size-mobile: calc(var(--standard-text-font-size) * 1.20);
+	--h4-6-size-mobile: calc(var(--standard-text-font-size) * 1.15);
+}
+/* ← → ↔ ↑ ↓ */
+/* General styling */
+html, body, /*ul, /*li, h1,*/ p, utf-8
+{
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	list-style: none;
+	color: var(--general-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-style: normal;
+	font-size: var(--standard-text-font-size);
+}
+/* Default element styles */
+body
+{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color:var(--body-backgroud-color);
+	background-position: center;
+}
+main
+{
+	position: relative;
+	margin: auto;
+	text-align: center;
+	min-width: 300px;
+	min-height: 225px;
+	margin-top: 16px;
+}
+section, .section
+{
+width: 80%;
+display: inline-block;
+}
+.section90
+{
+	width: 90%;
+	display: inline-block;
+}
+article
+{
+width: 100%;
+min-height: 60px;
+max-height: 1000px;
+word-wrap: normal;
+overflow-x: auto;
+overflow-y: auto;
+text-align: left;
+display: inline-block;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 10px;
+}
+h1
+{
+	font-size: var(--h1-size);
+}
+h2
+{
+	font-size: var(--h2-size);
+}
+h3
+{
+	font-size: var(--h3-size);
+}
+h4, h5, h6
+{
+	font-size: var(--h4-6-size);
+}
+/* Lists styes */
+ul
+{
+	list-style-type: arrows;
+}
+dt
+{
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+table
+{
+	width: auto;
+}
+tr
+{
+	padding: 5px;
+}
+th
+{
+	padding: 5px;
+	text-align: center;
+	color: var(--table-header-color);
+}
+td
+{
+	padding: 5px;
+	text-align: center;
+}
+
+ul.a
+{
+	list-style-type: none;
+	text-align: left;
+}
+a.a, a:visited
+{
+	font-weight: bolder;
+	font-family: Arial;
+}
+a.a:hover
+{
+	text-decoration: none;
+	color: var(--a-hover-color);
+}
+a.a:active
+{
+	text-decoration: none;
+	color: var(--a-active-color);
+}
+a
+{
+	color:var(--a-color);
+	text-decoration: none;
+}
+a:hover
+{
+	color: var(--a-hover-color);
+}
+#footer
+{
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: var(--footer-color);
+	background-color: var(--footer-backgroud-color);
+}
+@media only screen and (orientation: portrait)
+{
+	html, body, /*ul, /*li, h1,*/ p, utf-8
+	{
+		font-size: var(--mobile-text-font-size);
+	}
+	h1
+	{
+		font-size: var(--h1-size-mobile);
+	}
+	h2
+	{
+		font-size: var(--h2-size-mobile);
+	}
+	h3
+	{
+		font-size: var(--h3-size-mobile);
+	}
+	h4, h5, h6
+	{
+		font-size: var(--h4-6-size-mobile);
+	}
+	section, .section
+	{
+		width: 95%;
+	}
+	#footer
+	{
+		position: relative;
+	}
+}

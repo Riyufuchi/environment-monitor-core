@@ -1,0 +1,47 @@
+/* CSS styles for elements used in gallery */
+.galleryFrame
+{
+	width: 48%;
+	height: auto;
+	margin: 5px;
+	border-radius: 25px 25px 25px 25px;
+	cursor: pointer;
+	/*aspect-ratio: 16 / 9;*/
+}
+.button45
+{
+	width: 48%;
+	height: auto;
+	margin: auto;
+	margin-bottom: 10px;
+	background-color: var(--body-backgroud-color);
+	/*border: none;*/
+	color: white; /*var(--body-backgroud-color);*/
+	font-family: tf2-Secondary;
+	font-style: normal;
+	font-size: 28px;
+	border-radius: 15px 15px 15px 15px;
+	border: 5px solid white;
+}
+.button45:hover
+{
+	/*background-color: hotpink;*/
+	border: 5px solid var(--a-hover-color);
+	color: var(--a-hover-color);
+}
+button:disabled, button[disabled], button[disabled]:hover
+{
+	border: 5px solid #666666;
+	color:#666666;
+	/*background-color: #cccccc;*/
+	/*color: #666666;*/
+}
+@media only screen and (orientation: portrait)
+{
+	.galleryFrame
+	{
+		margin: auto;
+		min-width: 100%;
+		height: auto;
+	}
+}

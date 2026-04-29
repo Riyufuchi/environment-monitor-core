@@ -1,0 +1,21 @@
+/* Styles for custom element behavior */
+form
+{
+	text-align: left;
+	padding: 8px;
+	min-width: 25%;
+	max-width: 75%;
+	font-size: var(--standard-text-font-size);
+}
+.basicBorder
+{
+	border: 2px solid gray;
+}
+@media only screen and (orientation: portrait)
+{
+	form
+	{
+		width: auto;
+		margin: auto;
+	}
+}

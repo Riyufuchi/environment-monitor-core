@@ -1,0 +1,93 @@
+/* CSS Document */
+.relative
+{
+	position: relative;
+}
+.block
+{
+	display: block;
+}
+.textLeft
+{
+	text-align: left;
+}
+.textCenter
+{
+	text-align: center;
+}
+.clear
+{
+	clear: Both;
+}
+.relative
+{
+	position: absolute;
+}
+.left
+{
+	float: left;
+}
+.right
+{
+	float: right;
+}
+.centerV
+{
+	margin: auto;
+}
+.wAuto
+{
+	width: auto;
+}
+.w100
+{
+	width: 100%;
+}
+.w80
+{
+	width: 80%;
+}
+.w75
+{
+	width: 75%;
+}
+.w50
+{
+	width: 50%;
+}
+.w35
+{
+	width: 35%;
+}
+.w25
+{
+	width: 25%;
+}
+.hAuto
+{
+	height: auto;
+}
+.h100
+{
+	height: 100%;
+}
+.h80
+{
+	height: 80%;
+}
+.h75
+{
+	height: 75%;
+}
+.h50
+{
+	height: 50%;
+}
+.h35
+{
+	height: 35%;
+}
+.h25
+{
+	height: 25%;
+}

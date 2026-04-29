@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>About me</title>
+	<base href="../../" />
+
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="pictures/logos/logo.png">
+	<link href="sivo/css/base/sivoBase.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/base/sivoCustom.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/header/mobileMenu.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/basicForm.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/loginForm.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/interactive.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/aboutme.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="sivo/js/menuBar.js"></script>
+	<script type="text/javascript" src="sivo/js/mobileMenu.js"></script>
+	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+	<script>
+		window.onload=function()
+		{
+			//createSpacer();
+			createMenu();
+			centerMain();
+			kofiWidgetOverlay.draw('riyufuchi', {'type': 'floating-chat','floating-chat.donateButton.text': 'Donate','floating-chat.donateButton.background-color': '#00bfa5','floating-chat.donateButton.text-color': '#fff'});
+		}
+		window.onorientationchange = function()
+		{
+			//createSpacer();
+			centerMain();
+		}
+	</script>
+
+</head>
+<body style="background-image: url('pictures/backgrounds/MountainLabPanorama.png');">
+	<header class="sivoHeader" id="navbar">
+		<div class="sivoHeaderContainer">
+			<a href="index.html" class="sivoHeaderLogo"><img class="sivoHeaderLogo" src="pictures/logos/logo.png" alt="company logo"></a>
+			<a href="javascript:void(0);" class="sivoHeaderMenuButton" onclick="mobileMenu()">≡</a>
+		</div>
+	</header>
+	<nav class="sivoHeaderMenuContainer" id="sivoLinks">
+		<!-- links are added via javascript -->
+	</nav>
+	<main class="centerForm">
+		<section>
+<article class="about-me">
+	<h2>👋 Hi, I’m Riyufuchi</h2>
+
+	<ul>
+		<li><strong>Favorite programming languages:</strong> C++, C#, Java, C</li>
+		<li><strong>Favorite Linux distro:</strong> Ubuntu</li>
+	</ul>
+
+	<blockquote>
+		Only the people who are crazy enough to think they can change the world
+		are the ones that do.
+		<footer>— Steve Jobs</footer>
+	</blockquote>
+</article>
+		</section>
+	</main>
+	<footer style="position: absolute; bottom: 0px;" id="footer">
+		<!-- links are added via javascript -->
+	</footer>
+</body>
+</html>

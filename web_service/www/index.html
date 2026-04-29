@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Riyufuchi's portfolio</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Riyufuchi's personal web page that is also a online portfolio.">
+	<meta name="keywords" content="C++, C#, .NET 8, Portfolio">
+    <meta name="author" content="Riyufuchi">
+    <meta name="copyright" content="© 2025 - 2026 Riyufuchi. All rights reserved.">
+	<meta name="robots" content="index, follow">
+	
+	<link rel="icon" href="pictures/logos/logo.png">
+	<link href="sivo/css/base/sivo_base.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/base/sivo_custom.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/slideshow/slideshow.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/header/sivo_header_nav.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/visualEffects/specialSection.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/visualEffects/effects.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/visualEffects/lines.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/job_menu.css" rel="stylesheet" type="text/css">
+	<link href="sivo/css/interactive/pageTabs.css" rel="stylesheet" type="text/css">
+
+	<script src="sivo/js/sivo_header_nav_scripts.js"></script>
+	<script src="sivo/js/menuBar.js"></script>
+	<script>
+		window.onload=function()
+		{
+			createMenu();
+		}
+		window.onorientationchange = function()
+		{
+		}
+	</script>
+</head>
+<body style="background-image: url('pictures/backgrounds/AsteroidOuterSpace.png');">
+	<header class="sivoStaticHeader" id="navbar">
+		<div class="sivoHeaderContainer">
+			<a href="index.html" class="sivoHeaderLogo"><img class="sivoHeaderLogo" src="pictures/logos/logo.png" alt="company logo"></a>
+			<a href="javascript:void(0);" class="sivoHeaderMenuButton" onclick="showStaticMenu()">≡</a>
+		</div>
+	</header>
+	<nav class="sivoStaticHeaderMenuContainer" id="sivoLinks">
+	</nav>
+	<main>
+		<div class="section">
+			<div class="simitrut-leftLine"></div>
+			<article class="simitrut-mainArticle">
+				<h2 class="simitrut-title"><b>Welcome</b></h2>
+                <p>
+                    <strong>I’m Riyufuchi</strong><br><br>I am a software developer with a strong focus on C++. I also develop in C# and work on IoT projects.
+                </p>
+			</article>
+		</div>
+		<div class="section" id="aboutme">
+		  <article class="modernArticle">
+            <h2>Quickly about me</h2>
+            <ul>
+                <li><strong>Favorite programming languages:</strong> C++, C# and C</li>
+                <li><strong>Favorite Linux distro:</strong> Ubuntu</li>
+                <li><strong>Favorite IDE's:</strong> Qt Creator and Visual Studio Code</li>
+            </ul>
+            <blockquote>
+                Only the people who are crazy enough to think they can change the world
+                are the ones who do.
+                <footer>— Steve Jobs</footer>
+            </blockquote>
+		  </article>
+		</div>
+		<section>
+			<h1 class="whatIdoHeader" id="what_i_do_id">What I do</h1>
+			<div class="container">
+				<div class="jobButton" onclick="buttonClick(2)">
+					<div class="app"></div>
+					<div class="jobButtonText">C / C++ Development</div>
+				</div>
+                <div class="jobButton" onclick="buttonClick(4)">
+					<div class="other"></div>
+					<div class="jobButtonText">Electrical instalations</div>
+				</div>
+                <div class="jobButton" onclick="buttonClick(1)">
+					<div class="other"></div>
+					<div class="jobButtonText">IoT</div>
+				</div>
+				<div class="jobButton" onclick="buttonClick(3)">
+					<div class="webapp"></div>
+					<div class="jobButtonText">Other Technologies</div>
+				</div>
+			</div>
+			<script>
+				function buttonClick(id)
+				{
+					switch(id)
+					{
+						case 1: window.location.href = "#iot_article"; break;
+						case 2: window.location.href = "#cpp_application_dev_article"; break;
+						case 3: window.location.href = "#other_tech"; break;
+						default: alert("Button ID error"); break;
+					}
+				}
+ 			</script>
+			<!-- -->
+            <article class="modernArticle" id="cpp_application_dev_article">
+                <h2>C / C++ Development</h2>
+                    <p>
+                        I develop mainly in C++ 17/20 on Linux and some of my code can be compiled with MSVC,
+                        but I primarily use MigGW to simplify porting applications for Windows.
+                        To make building the applications even more simpler I use CMake and I write documentation in LaTeX.
+                    </p>
+                <h3>Graphical applications</h3>
+                    <p>
+                        I use <a href="https://github.com/Riyufuchi/imagine">Qt 6</a> for developing GUI applications and SFML for experimantation with game development.
+                    </p>
+                <h3>Command-line tools</h3>
+                    <p>
+                        I have created a library called <a href="https://github.com/Riyufuchi/ConsoleLib">ConsoleLib</a> that provided tools to make cross-platform CLI applications. Some tools are about coloring output across platforms with unified "interface" or menu that is controllable with arrows and enter. Features of this library can be seen in project <a href="https://github.com/Riyufuchi/ConsoleArt">ConsoleArt</a> for which they were originally created.
+                    </p>
+                <h3>Summary</h3>
+                    <p>
+                        I focus on correctness, performance, and maintainability, with experience in both low-level C and modern C++.
+                    </p>
+                <blockquote>
+                    C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do it blows your whole leg off.
+                    <footer>— Bjarne Stroustrup</footer>
+                </blockquote>
+            </article>
+			<!-- -->
+            <article class="modernArticle" id="iot_article">
+                <h2>IoT Development</h2>
+                <ul>
+                    <li>AVR based microcontrollers</li>
+                    <li>Communication protocols - I2C, UART...</li>
+                </ul>
+                <h3>Firmaware Development</h3>
+                    <p>
+                        I use <a href="https://github.com/Riyufuchi/environment-monitor-core">C/C++ for embedded development</a> where I directly work with registers, so no Arduino "magic" libraries.
+                    </p>
+                <h3>Summary</h3>
+                    <p>
+                        I enjoy developing firmaware for devices in C/C++ and also getting to know how hardware works.
+                    </p>
+                <blockquote>
+                    Unlike transient applications, embedded systems persist as physical artifacts — devices that once sensed and responded to their environment.
+                    <footer>— Riyufuchi</footer>
+                </blockquote>
+            </article>
+			<article class="modernArticle" id="other_tech">
+                <h2>Other Technologies</h2>
+                    <ul>
+                        <li>Databases – Oracle, SQLite</li>
+                        <li>Linux tooling, Git, CMake</li>
+                        <li>Technical documentation (LaTeX)</li>
+                    </ul>
+                <h3>C#</h3>
+                    <p>I am focused on GUI applications in C# using WPF, but now also on small .NET Core tools. I can also create multi-threaded asynchronous applications in C#.</p>
+                <h4>Websites and ASP .NET</h4>
+                    <p>I also some do static websites using HTML 5, but I'm also planning on experimantating with ASP .NET Core.</p>
+                <h3>Summary</h3>
+                    <p>I enjoy exploring different technologies and understanding how systems work.</p>
+            </article>
+		</section>
+		<div class="section" id="contact">
+			<article class="simitrut-contactArticle">
+				<h2 class="simitrut-contactTitle">Social</h2>
+				<div class="simitrut-paragraph">
+					<table>
+						<tr>
+							<th>GitHub:</th>
+							<td><a href="https://github.com/Riyufuchi">https://github.com/Riyufuchi</a></td>
+						</tr>
+						<tr>
+							<th>Ko-Fi:</th>
+							<td><a href="https://ko-fi.com/riyufuchi">https://ko-fi.com/riyufuchi</a></td>
+						</tr>
+					</table>
+				</div>
+			</article>
+			<div class="simitrut-rightHorizontalLine"></div>
+			<div class="simitrut-rightVerticalLine"></div>
+		</div>
+	</main>
+	<footer id="footer">
+		<!-- links are added via javascript -->
+	</footer>
+</body>
+</html>
