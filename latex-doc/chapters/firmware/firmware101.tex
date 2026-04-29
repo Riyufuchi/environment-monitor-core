@@ -21,7 +21,7 @@ Before using it, minor configuration may be required depending on:
 Once configured, the firmware can be compiled and uploaded with a few simple commands.  
 
 \begin{lstlisting}[language=bash, caption={Using the CMake to compile and upload firmware}, label={lst:arduino-cmake}]
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=cmake/avr-toolchain.cmake
+cmake -B build -S .
 cmake --build build # Compile the source code into a firmware image
 cmake --build build --target flash # Flash the compiled firmware onto the board
 \end{lstlisting}

@@ -85,3 +85,17 @@ add_custom_target(flash
 add_custom_target(size
     COMMAND avr-size firmware
 )
+
+# Path to LaTeX source folder
+set(LATEX_DIR ${CMAKE_CURRENT_SOURCE_DIR}/latex-doc)
+set(MAIN_TEX environment_monitor_core.tex)
+#set(OUTPUT_PDF ${CMAKE_CURRENT_BINARY_DIR}/nocovka.pdf)
+
+# Custom target to build docs
+add_custom_target(docs
+	COMMAND ${CMAKE_COMMAND} -E chdir ${LATEX_DIR} lualatex ${MAIN_TEX}
+	COMMAND ${CMAKE_COMMAND} -E chdir ${LATEX_DIR} makeglossaries environment_monitor_core
+	COMMAND ${CMAKE_COMMAND} -E chdir ${LATEX_DIR} lualatex ${MAIN_TEX}
+	COMMAND ${CMAKE_COMMAND} -E chdir ${LATEX_DIR} lualatex ${MAIN_TEX}
+	COMMENT "Building PDF documentation with lualatex and makeglossaries"
+)

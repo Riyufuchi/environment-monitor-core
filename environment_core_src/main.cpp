@@ -5,6 +5,8 @@
 #include "board/base_board.hpp"
 #include "output_modules/led.h"
 
+#include "protocols/uart.hpp"
+
 int main()
 {
     ArduinoUno board;
@@ -15,21 +17,32 @@ int main()
     board.digital_write(3, false);
     board.pin_mode(7, Board::PinMode::INPUT_PULLUP);
 
+    UART::init(UART::BaudRate::BR_9600);
+
+    char temp = 'a';
+    char humi = 'A';
+    
+    char text[5];
+    text[0] = temp;
+    text[1] = ';';
+    text[2] = humi;
+    text[3] = '\n';
+    text[4] = '\0';
+
     while (true)
     {
-        board.digital_write(3, false);
-        if (board.digital_read(7))
-            build_in_led.turn_on(true);
-        else
-            build_in_led.turn_on(false);
+        if (temp == 'z')
+            temp = 'a';
+        if (humi == 'Z')
+            humi = 'A';
 
-        _delay_ms(1000);
-        
-        board.digital_write(3, true);
-        if (board.digital_read(7))
-            build_in_led.turn_on(true);
-        else
-            build_in_led.turn_on(false);
+        text[0] = temp;
+        text[2] = humi;
+
+        UART::send_string(text);
+
+        temp++;
+        humi++;
 
         _delay_ms(1000);
     }

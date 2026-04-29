@@ -41,6 +41,26 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 #
+# ConsoleLib
+#
+set(CONSOLE_LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs/ConsoleLib)
+
+# Create an IMPORTED target for the .a file
+add_library(ConsoleLib STATIC IMPORTED)
+
+# Point the IMPORTED target to the actual file
+# Windows binary is compiled using mingw g++
+if (WIN32)
+	set_target_properties(ConsoleLib PROPERTIES
+	IMPORTED_LOCATION ${CONSOLE_LIB_DIR}/windows/libConsoleLib.a
+	INTERFACE_INCLUDE_DIRECTORIES ${CONSOLE_LIB_DIR})
+else()
+	set_target_properties(ConsoleLib PROPERTIES
+	IMPORTED_LOCATION ${CONSOLE_LIB_DIR}/linux/libConsoleLib.a
+	INTERFACE_INCLUDE_DIRECTORIES ${CONSOLE_LIB_DIR})
+endif()
+
+#
 # Library itself
 #
 file(MAKE_DIRECTORY build)
@@ -51,4 +71,7 @@ file(GLOB_RECURSE APP_SOURCES
 )
 
 add_executable(web_service ${APP_SOURCES})
+
+target_include_directories(web_service PRIVATE ${CONSOLE_LIB_DIR}/inc)
+target_link_libraries(web_service PRIVATE ConsoleLib)
 
