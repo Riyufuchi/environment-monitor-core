@@ -31,23 +31,32 @@ int main()
     
     char text[32];
 
+    uint32_t now, last_read = 6000;
+    bool was_read_ok = false;
+
     while (true)
     {
-        dht22.read_data();
-        build_in_led.turn_on(!dht22.is_valid());
+        now = Timer::millis();
 
-        snprintf(text, sizeof(text),
-            "%d;%d;%d;%d\n",
-            dht22.is_valid(),
-            dht22.get_tempeture_x10(),
-            dht22.get_humidity_x10(),
-            dht22.get_error_code());
-    
+        if (now - last_read >= 2000 || !was_read_ok)
+        {
+            last_read = now;
+            was_read_ok = dht22.read_data();
+            build_in_led.turn_on(!dht22.is_valid());
 
-        UART::send_string(text);
+            snprintf(text, sizeof(text),
+                "%d;%d;%d;%d\n",
+                dht22.is_valid(),
+                dht22.get_tempeture_x10(),
+                dht22.get_humidity_x10(),
+                dht22.get_error_code());
+        
+
+            UART::send_string(text);
+        }
 
 
-        _delay_ms(5000);
+       // _delay_ms(5000);
     }
     
     return 0;

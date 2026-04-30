@@ -22,7 +22,7 @@ void serial_worker(std::stop_token st, SerialPort& port, std::string& latest_val
 
 int main(int argc, char** argv)
 {
-	std::cout << "Web service Ardo v0.6\n";
+	std::cout << "Web service Ardo v0.9\n";
 
 	std::mutex data_mutex;
 	std::string latest_value;
@@ -64,10 +64,10 @@ int main(int argc, char** argv)
 		else
 		{
 			invalid_data ++;
-			std::cout << "Error for line: " << latest_value << "\n";
-
-			std::cout << "OK : BAD\n" << valid_data << " : " << invalid_data << " => "<< ((double)valid_data) / invalid_data << " %" << "\n\n";
+			std::cout << "Error for line: " << latest_value << "\n\n";
 		}
+
+		std::cout << valid_data << " : " << invalid_data << " => "<< (((double)valid_data) / (invalid_data + valid_data)) * 100 << " %" << "\n\n";
 	});
 
 	// Serve files from ./www folder
