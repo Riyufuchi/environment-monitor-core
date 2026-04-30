@@ -22,10 +22,17 @@ void serial_worker(std::stop_token st, SerialPort& port, std::string& latest_val
 
 int main(int argc, char** argv)
 {
+	std::cout << "Web service Ardo v0.6\n";
+
 	std::mutex data_mutex;
 	std::string latest_value;
 	std::string tempeture = "?";
 	std::string humidity = "?";
+	std::string success = "?";
+	std::string error_code = "?";
+
+	int valid_data = 0;
+	int invalid_data = 0;
 
 	httplib::Server server_http;
 
@@ -34,15 +41,33 @@ int main(int argc, char** argv)
 		std::lock_guard<std::mutex> lock(data_mutex);
 		std::stringstream ss(latest_value);
 
+		std::getline(ss, success, ';');
 		std::getline(ss, tempeture, ';');
 		std::getline(ss, humidity, ';');
+		std::getline(ss, error_code, ';');
 
+		double temp = std::stod(tempeture) / 10.0;
+		double hum =  std::stod(humidity) / 10.0;
 
-		res.set_content(
-			"{\"a\":\"" + tempeture +
-			"\",\"b\":\"" + humidity + "\"}",
-			"application/json"
-		);
+		tempeture = std::to_string(temp).substr(0, 4) + " °C";
+		humidity = std::to_string(hum).substr(0, 4) + " %";
+
+		if (success == "1")
+		{
+			valid_data++;
+			res.set_content(
+						"{\"a\":\"" + tempeture +
+						"\",\"b\":\"" + humidity + "\"}",
+						"application/json"
+						);
+		}
+		else
+		{
+			invalid_data ++;
+			std::cout << "Error for line: " << latest_value << "\n";
+
+			std::cout << "OK : BAD\n" << valid_data << " : " << invalid_data << " => "<< ((double)valid_data) / invalid_data << " %" << "\n\n";
+		}
 	});
 
 	// Serve files from ./www folder
@@ -98,7 +123,6 @@ void serial_worker(std::stop_token st, SerialPort& port, std::string& latest_val
 					std::lock_guard<std::mutex> lock(data_mutex);
 					latest_value = buffer;
 				}
-				std::cout << "LINE: " << buffer << "\n";
 				buffer.clear();
 			}
 			else

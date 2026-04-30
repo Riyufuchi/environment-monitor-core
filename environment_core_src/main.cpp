@@ -1,15 +1,23 @@
 
 #include <util/delay.h>
+#include <stdio.h>
 
 #include "board/arduino_uno.h"
 #include "board/base_board.hpp"
+
 #include "output_modules/led.h"
 
+#include "input_modules/Dht22.h"
+
 #include "protocols/uart.hpp"
+
+#include "tools/Timer.h"
 
 int main()
 {
     ArduinoUno board;
+
+    Timer::init_millis_timer1();
 
     Led build_in_led(board, 13);
 
@@ -19,32 +27,27 @@ int main()
 
     UART::init(UART::BaudRate::BR_9600);
 
-    char temp = 'a';
-    char humi = 'A';
+    Dht22 dht22(board, 7);
     
-    char text[5];
-    text[0] = temp;
-    text[1] = ';';
-    text[2] = humi;
-    text[3] = '\n';
-    text[4] = '\0';
+    char text[32];
 
     while (true)
     {
-        if (temp == 'z')
-            temp = 'a';
-        if (humi == 'Z')
-            humi = 'A';
+        dht22.read_data();
+        build_in_led.turn_on(!dht22.is_valid());
 
-        text[0] = temp;
-        text[2] = humi;
+        snprintf(text, sizeof(text),
+            "%d;%d;%d;%d\n",
+            dht22.is_valid(),
+            dht22.get_tempeture_x10(),
+            dht22.get_humidity_x10(),
+            dht22.get_error_code());
+    
 
         UART::send_string(text);
 
-        temp++;
-        humi++;
 
-        _delay_ms(1000);
+        _delay_ms(5000);
     }
     
     return 0;

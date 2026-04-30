@@ -46,7 +46,7 @@
 		<div class="section">
 			<div class="simitrut-leftLine"></div>
 			<article class="simitrut-mainArticle">
-				<h2 class="simitrut-title"><b>Ardo v0.1</b></h2>
+				<h2 class="simitrut-title"><b>Ardo v0.4</b></h2>
 			</article>
 		</div>
 		<section>
@@ -69,7 +69,8 @@
                 document.getElementById("temp").innerText = data.a;
                 document.getElementById("humi").innerText = data.b;
             }
-            setInterval(fetchData, 500); // update every 500ms
+            setInterval(fetchData, 2000);
+            fetchData();
         </script>
 		<div class="section" id="contact">
 			<article class="simitrut-contactArticle">
