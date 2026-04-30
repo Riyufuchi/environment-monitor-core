@@ -38,11 +38,51 @@ uint8_t Dht22::get_error_code() const
     return error_code;
 }
 
+/*bool Dht22::hand_shake()
+{
+    board_pin_map.pin_mode(data_pin, Board::PinMode::OUTPUT);
+    board_pin_map.digital_write(data_pin, false);
+    //_delay_ms(2);
+    board_pin_map.pin_mode(data_pin, Board::PinMode::INPUT_PULLUP);
+
+    // Wait for DHT22 acknowledgment
+    // 1. step wait for LOW
+    uint32_t start = Timer::millis();
+    while ((PIND & (1 << 7)) != 0)
+    {
+        if (Timer::millis() - start > 10)
+        {
+            error_code = 00;
+            return false;
+        }
+    }
+    // 2. Step wait for HIGHT
+    while (!(PIND & (1 << 7)) != 0) // Wait for DHT22 acknowledgment 
+    {
+        if (Timer::millis() - start > 5)
+        {
+            error_code = 1;
+            return false;
+        }
+    }
+    // 3. step wait for final LOW
+    while ((PIND & (1 << 7)) != 0)
+    {
+        if (Timer::millis() - start > 5)
+        {
+            error_code = 2;
+            return false;
+        }
+    }
+
+    return true;
+}*/
+
 bool Dht22::hand_shake()
 {
     board_pin_map.pin_mode(data_pin, Board::PinMode::OUTPUT);
     board_pin_map.digital_write(data_pin, false);
-    _delay_ms(2);
+    _delay_ms(1);
     board_pin_map.pin_mode(data_pin, Board::PinMode::INPUT_PULLUP);
 
     // Wait for DHT22 acknowledgment
@@ -128,7 +168,7 @@ bool Dht22::read_sequence()
         bit_index  = 7 - (i % 8); // 7 because DHT22 sends MSB first
 
         // 4. interpret bit
-        if (end - start >= 40)
+        if (end - start >= 55)
         {
             recieved_data[byte_index] |= (1 << bit_index);
         }

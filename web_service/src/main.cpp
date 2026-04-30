@@ -22,7 +22,7 @@ void serial_worker(std::stop_token st, SerialPort& port, std::string& latest_val
 
 int main(int argc, char** argv)
 {
-	std::cout << "Web service Ardo v0.9\n";
+	std::cout << "Web service Ardo v1.0 - beta\n";
 
 	std::mutex data_mutex;
 	std::string latest_value;
@@ -30,6 +30,8 @@ int main(int argc, char** argv)
 	std::string humidity = "?";
 	std::string success = "?";
 	std::string error_code = "?";
+
+
 
 	int valid_data = 0;
 	int invalid_data = 0;
